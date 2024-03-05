@@ -1,0 +1,156 @@
+---
+title: "Lab 5: Multinomial Regression"
+subtitle: "Princeton University"
+author: "INSERT NAME"
+output: 
+  tufte::tufte_html:
+    css: 
+    tufte_variant: "envisioned"
+    highlight: github-dark
+    fig_height: 10
+    fig_width: 16
+    toc: true
+    toc_depth: 1
+execute: 
+  message: false
+  warning: false
+format: 
+  html:
+    code-fold: true
+    code-overflow: wrap
+engine: knitr
+---
+
+## Data
+
+The data for this assignment comes from an online Ipsos survey that was conducted for the FiveThirtyEight article ["Why Many Americans Don't Vote"](https://projects.fivethirtyeight.com/non-voters-poll-2020-election/). You can read more about the survey design and respondents in the README of the [GitHub repo](https://github.com/fivethirtyeight/data/tree/master/non-voters) for the data.
+
+Respondents were asked a variety of questions about their political beliefs, thoughts on multiple issues, and voting behavior. We will focus on using the demographic variables and someone's party identification to understand whether a person is a probable voter.
+
+The variables we'll focus on are (definitions from the codebook in data set GitHub repo):
+
+-   `ppage`: Age of respondent
+
+-   `educ`: Highest educational attainment category.
+
+-   `race`: Race of respondent, census categories. Note: all categories except Hispanic are non-Hispanic.
+
+-   `gender`: Gender of respondent
+
+-   `income_cat`: Household income category of respondent
+
+-   `Q30`: Response to the question "Generally speaking, do you think of yourself as a..."
+
+    -   1: Republican
+    -   2: Democrat
+    -   3: Independent
+    -   4: Another party, please specify
+    -   5: No preference
+    -   -1: No response
+
+-   `voter_category`: past voting behavior:
+
+    -   **always**: respondent voted in all or all-but-one of the elections they were eligible in
+    -   **sporadic**: respondent voted in at least two, but fewer than all-but-one of the elections they were eligible in
+    -   **rarely/never**: respondent voted in 0 or 1 of the elections they were eligible in
+    
+
+
+```{r}
+#load packages
+
+```
+
+- You can read in the data directly from the GitHub repo:
+
+```{r}
+voter_data <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/non-voters/nonvoters_data.csv")
+```
+
+## Lab
+
+> The variable `Q30` contains the respondent's political party identification. Make a new variable that simplifies `Q30` into four categories: "Democrat", "Republican", "Independent", "Other" ("Other" also includes respondents who did not answer the question).
+
+```{r}
+
+```
+
+> The variable `voter_category` identifies the respondent's past voter behavior. Relevel the variable to make rarely/never the baseline level, followed by sporadic, then always
+
+```{r}
+# relevel the var 
+```
+
+> Mean center `age`
+
+```{r}
+# mean center age
+```
+
+> In the [FiveThirtyEight article](https://projects.fivethirtyeight.com/non-voters-poll-2020-election/), the authors include visualizations of the relationship between the voter category and demographic variables such as race, age, education, etc. Select two demographic variables. For each variable, try to replicate the visualizations and interpret the plot to describe its relationship with voter category. Have fun with it: https://www.mikelee.co/posts/2020-02-08-recreate-fivethirtyeight-chicklet-stacked-bar-chart-in-ggplot2. Use the `patchwork` package  to combine these figures into one plot. 
+
+```{r}
+
+#fig1
+
+```
+
+```{r}
+
+#fig2
+```
+
+```{r}
+#Combine these plots with patchwork
+
+```
+
+> Fit a model using mean-centered age and education to predict voter category. Show the code used to fit the model, but do **not** display the model output.
+
+```{r}
+
+
+```
+
+> Fit a model with `age` `political orientation` and `education` (no interaction). 
+
+```{r}
+
+```
+
+> Display the model as table listing the LRTs for each variable. What can you conclude about each variable?
+
+```{r}
+
+
+
+```
+
+
+>  *Should `political orientation` be added to the model?* Include the output from the test, and the conclusion in the context of the data.
+
+```{r}
+
+```
+
+> Use `emmeans` to get the pairwise comparisons for `political orientation` 
+
+```{r}
+
+```
+
+> Use `emmeans` to get the pairwise comparisons for `education`
+
+```{r}
+
+```
+
+## Reporting
+
+>  Please use the textbook chapter for this week as guidance for this write-up (https://psy504-s24-advstats.netlify.app/readings/mult/mult.pdf). Write up the model above  with `age`, `political orientation`,  and `education`. Make sure you include the $\chi^2$ for each predictor as well as the model fit. Also, make sure your write-up includes a discussion of which response level(s) differ from the baseline category, and the pairwise comparisons between  each level of `political orientation` and `education` on voter behavior. Display the results in a nice figure. Inspired by Nicole's presentation, I found a package called `ggstats` that allows for some nice automatic visualizations of model results (see   https://larmarange.github.io/ggstats/articles/ggcoef_model.html). Look on this page and search for multinomial models. Find a figure you like and replicate it with our model. 
+
+```{r}
+# model plot
+
+```
+
