@@ -118,7 +118,7 @@ voter_data <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/m
 
 ```
 
-> Display the model as table listing the LRTs for each variable. What can you conclude about each variable?
+> Display the model as a table listing the LRTs for each variable. What can you conclude about each variable?
 
 ```{r}
 
@@ -147,7 +147,8 @@ voter_data <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/m
 
 ## Reporting
 
->  Please use the textbook chapter for this week as guidance for this write-up (https://psy504-s24-advstats.netlify.app/readings/mult/mult.pdf). Write up the model above  with `age`, `political orientation`,  and `education`. Make sure you include the $\chi^2$ for each predictor as well as the model fit. Also, make sure your write-up includes a discussion of which response level(s) differ from the baseline category, and the pairwise comparisons between  each level of `political orientation` and `education` on voter behavior. Display the results in a nice figure. Inspired by Nicole's presentation, I found a package called `ggstats` that allows for some nice automatic visualizations of model results (see   https://larmarange.github.io/ggstats/articles/ggcoef_model.html). Look on this page and search for multinomial models. Find a figure you like and replicate it with our model. 
+>  Please use the textbook chapter for this week as guidance for this write-up (https://psy504-s24-advstats.netlify.app/readings/mult/mult.pdf). Write up the model above  with `age`, `political orientation`,  and `education`. Make sure you include the $\chi^2$ for each predictor as well as the model fit. Also, make sure your write-up includes a discussion of which response level(s) differ from the baseline category, and the pairwise comparisons between  each level of `political orientation` and `education` on voter behavior. 
+Display the results in a nice figure. Inspired by Nicole's presentation, I found a package called `ggstats` that allows for some nice automatic visualizations of model results (see   https://larmarange.github.io/ggstats/articles/ggcoef_model.html). Look on this page and search for multinomial models. Find a figure you like and replicate it with our model. 
 
 ```{r}
 # model plot
