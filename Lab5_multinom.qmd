@@ -118,10 +118,10 @@ voter_data <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/m
 
 ```
 
+
 > Display the model as a table listing the LRTs for each variable. What can you conclude about each variable?
 
 ```{r}
-
 
 
 ```
